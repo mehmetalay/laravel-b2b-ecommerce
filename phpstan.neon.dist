@@ -1,0 +1,12 @@
+parameters:
+    level: 0
+    paths:
+        - app/Application
+    bootstrapFiles:
+        - phpstan-bootstrap.php
+    excludePaths:
+        analyse:
+            - bootstrap/cache/*
+            - storage/*
+            - vendor/*
+    tmpDir: tmp/phpstan

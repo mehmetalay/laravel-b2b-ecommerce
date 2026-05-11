@@ -1,0 +1,28 @@
+{
+    "private": true,
+    "scripts": {
+        "mix:dev": "mix",
+        "mix:watch": "mix watch",
+        "mix:prod": "mix --production",
+        "vite:dev": "vite",
+        "vite:build": "vite build",
+        "vite:watch": "vite build --watch",
+        "build:admin-vue": "npm run vite:build",
+        "build:mix": "npm run mix:prod",
+        "build:all": "npm run build:mix && npm run build:admin-vue"
+    },
+    "dependencies": {
+        "sortablejs": "^1.15.6",
+        "vue": "^3.5.22"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^5.2.4",
+        "axios": "^0.21.4",
+        "laravel-mix": "^6.0.49",
+        "lodash": "^4.17.19",
+        "postcss": "^8.1.14",
+        "typescript": "^5.9.3",
+        "vite": "^5.4.20",
+        "webpack": "5.88.2"
+    }
+}

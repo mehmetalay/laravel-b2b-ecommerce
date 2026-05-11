@@ -1,0 +1,92 @@
+<?php
+
+use App\Http\Controllers\Admin\Catalog\BrandController;
+use App\Http\Controllers\Admin\Catalog\CategoryController;
+use App\Http\Controllers\Admin\Catalog\ProductController;
+use App\Http\Controllers\Admin\OrderController as AdminOrderController;
+use App\Http\Controllers\Admin\PaymentReportController as AdminPaymentReportController;
+use App\Http\Controllers\Admin\ExportJobController;
+use App\Http\Controllers\Admin\Catalog\ProductAttribute\AttributeController;
+use App\Http\Controllers\Admin\Catalog\ProductAttribute\AttributeGroupController;
+use App\Http\Controllers\Admin\Catalog\ProductAttribute\AttributeValueController;
+use App\Http\Controllers\Admin\Setting\DesignSetting\SliderController;
+use Illuminate\Support\Facades\Route;
+
+/* Frontend Routes */
+require __DIR__.'/frontend/home.php';
+require __DIR__.'/frontend/auth.php';
+require __DIR__.'/frontend/product.php';
+require __DIR__.'/frontend/cart.php';
+require __DIR__.'/frontend/order.php';
+require __DIR__.'/frontend/report.php';
+require __DIR__.'/frontend/mail.php';
+require __DIR__.'/frontend/xml.php';
+require __DIR__.'/frontend/excel.php';
+require __DIR__.'/frontend/survey.php';
+require __DIR__.'/frontend/pdf.php';
+require __DIR__.'/frontend/contract.php';
+require __DIR__.'/frontend/location.php';
+require __DIR__.'/frontend/address.php';
+require __DIR__.'/frontend/page.php';
+require __DIR__.'/frontend/ajax.php';
+require __DIR__.'/frontend/language.php';
+require __DIR__.'/frontend/bank-integration.php';
+require __DIR__.'/frontend/dealership-application.php';
+require __DIR__.'/frontend/collection.php';
+require __DIR__.'/frontend/payment.php';
+require __DIR__.'/frontend/current-account.php';
+require __DIR__.'/frontend/dealer.php';
+require __DIR__.'/frontend/account.php';
+
+/* Backend Routes */
+Route::prefix('aka')->name('admin.')->group(function () {
+    require __DIR__.'/backend/dashboard.php';
+    require __DIR__.'/backend/auth.php';
+    require __DIR__.'/backend/stock.php';
+    require __DIR__.'/backend/order.php';
+    require __DIR__.'/backend/current-account.php';
+    require __DIR__.'/backend/salesman.php';
+    require __DIR__.'/backend/report.php';
+    require __DIR__.'/backend/setting.php';
+    require __DIR__.'/backend/campaign.php';
+    require __DIR__.'/backend/survey.php';
+    require __DIR__.'/backend/payment.php';
+    require __DIR__.'/backend/payment-link.php';
+    require __DIR__.'/backend/dealership-application.php';
+    require __DIR__.'/backend/pdf.php';
+    require __DIR__.'/backend/contract.php';
+});
+
+Route::middleware('auth:admin')->get('/admin/api/categories', [CategoryController::class, 'tableData']);
+Route::middleware('auth:admin')->get('/admin/api/orders', [AdminOrderController::class, 'tableData']);
+Route::middleware('auth:admin')->get('/admin/api/orders/export', [AdminOrderController::class, 'export']);
+Route::middleware('auth:admin')->post('/admin/api/orders/exports', [AdminOrderController::class, 'createExport']);
+Route::middleware('auth:admin')->get('/admin/api/payments', [AdminPaymentReportController::class, 'tableData']);
+Route::middleware('auth:admin')->patch('/admin/api/categories/bulk', [CategoryController::class, 'bulk']);
+Route::middleware('auth:admin')->patch('/admin/api/categories/{category}/inline', [CategoryController::class, 'inlineUpdate']);
+Route::middleware('auth:admin')->get('/admin/api/brands', [BrandController::class, 'tableData']);
+Route::middleware('auth:admin')->patch('/admin/api/brands/bulk', [BrandController::class, 'bulk']);
+Route::middleware('auth:admin')->patch('/admin/api/brands/{brand}/inline', [BrandController::class, 'inlineUpdate']);
+Route::middleware('auth:admin')->patch('/admin/api/products/bulk', [ProductController::class, 'bulk']);
+Route::middleware('auth:admin')->patch('/admin/api/products/{product}/inline', [ProductController::class, 'inlineUpdate']);
+Route::middleware('auth:admin')->get('/admin/api/products/export', [ProductController::class, 'export']);
+Route::middleware('auth:admin')->post('/admin/api/products/exports', [ProductController::class, 'createExport']);
+Route::middleware('auth:admin')->get('/admin/api/payments/export', [AdminPaymentReportController::class, 'export']);
+Route::middleware('auth:admin')->post('/admin/api/payments/exports', [AdminPaymentReportController::class, 'createExport']);
+Route::middleware('auth:admin')->get('/admin/api/exports/{exportJob}', [ExportJobController::class, 'show']);
+Route::middleware('auth:admin')->get('/admin/api/exports/{exportJob}/download', [ExportJobController::class, 'download']);
+Route::middleware('auth:admin')->get('/admin/api/attribute-groups', [AttributeGroupController::class, 'tableData']);
+Route::middleware('auth:admin')->patch('/admin/api/attribute-groups/bulk', [AttributeGroupController::class, 'bulk']);
+Route::middleware('auth:admin')->get('/admin/api/attribute-groups/{attributeGroup}', [AttributeGroupController::class, 'show']);
+Route::middleware('auth:admin')->patch('/admin/api/attribute-groups/{attributeGroup}/inline', [AttributeGroupController::class, 'inlineUpdate']);
+Route::middleware('auth:admin')->get('/admin/api/attribute-groups/{attributeGroup}/attributes', [AttributeController::class, 'tableData']);
+Route::middleware('auth:admin')->patch('/admin/api/attributes/bulk', [AttributeController::class, 'bulk']);
+Route::middleware('auth:admin')->get('/admin/api/attributes/{attribute}', [AttributeController::class, 'apiShow']);
+Route::middleware('auth:admin')->patch('/admin/api/attributes/{attribute}/inline', [AttributeController::class, 'inlineUpdate']);
+Route::middleware('auth:admin')->get('/admin/api/attributes/{attribute}/attribute-values', [AttributeValueController::class, 'tableData']);
+Route::middleware('auth:admin')->patch('/admin/api/attribute-values/bulk', [AttributeValueController::class, 'bulk']);
+Route::middleware('auth:admin')->get('/admin/api/attribute-values/{attributeValue}', [AttributeValueController::class, 'apiShow']);
+Route::middleware('auth:admin')->patch('/admin/api/attribute-values/{attributeValue}/inline', [AttributeValueController::class, 'inlineUpdate']);
+Route::middleware('auth:admin')->get('/admin/api/sliders', [SliderController::class, 'tableData']);
+Route::middleware('auth:admin')->patch('/admin/api/sliders/bulk', [SliderController::class, 'bulk']);
+Route::middleware('auth:admin')->patch('/admin/api/sliders/{slider}/inline', [SliderController::class, 'inlineUpdate']);

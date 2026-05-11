@@ -1,0 +1,36 @@
+name: Quality CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  quality:
+    name: PHP CS + PHPStan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+          tools: composer:v2
+          coverage: none
+
+      - name: Validate composer.json
+        run: composer validate --no-check-publish --strict
+
+      - name: Install dependencies
+        run: composer install --no-interaction --no-progress --prefer-dist
+
+      - name: PHP CS Fixer (dry-run)
+        run: vendor/bin/php-cs-fixer fix --dry-run --diff --config=.php-cs-fixer.dist.php --verbose
+
+      - name: PHPStan analyse
+        run: vendor/bin/phpstan analyse --configuration=phpstan.neon.dist --no-progress

@@ -1,0 +1,80 @@
+<?php
+
+namespace App\Helpers;
+
+class GarantiHelper
+{
+    public const STATUSES = [
+        1 => 'Bankasından provizyon alınız.',
+		2 => 'Bankasından provizyon alınız. (VISA)',
+		3 => 'Üye işyeri kategori kodu hatalı.',
+		4 => 'Karta el koyunuz!!!',
+		5 => 'İşlem onaylanmadı.',
+		6 => 'İsteminiz kabul edilmedi.',
+		7 => 'Karta el koyunuz.',
+		8 => 'Kimliğini kontrol ederek işlemi yapınız.',
+		9 => 'Kart yenilenmiş. Müşteriden isteyin.',
+		11 => 'İşlem gerçekleştirildi (VIP).',
+		12 => 'Geçersiz işlem.',
+		13 => 'Geçersiz tutar.',
+		14 => 'Kart numarası hatalı.',
+		15 => 'Bankası bulunamadı.',
+		16 => 'Bakiye yetersiz. Yarın tekrar deneyin.',
+		17 => 'İşlem iptal edildi.',
+		18 => 'Kapalı kart. Tekrar denemeyin.',
+		19 => 'Bir kere daha provizyon talep ediniz.',
+		21 => 'İşlem iptal edilemedi.',
+		25 => 'Böyle bir bilgi bulunamadı.',
+		28 => 'Orijinali rededilmiş / Dosya servis dışı.',
+		29 => 'İptal yapılamadı. (Orjinali bulunamadı)',
+		30 => 'Mesajın formatı hatalı.',
+		31 => 'Issuersign-onolmamış.',
+		32 => 'İşlem kısmen gerçekleştirilebildi.',
+		33 => 'Kartın süresi dolmuş! Karta el koyunuz.',
+		34 => 'Muhtemelen çalıntı kart!!! El koyunuz.',
+		36 => 'Sınırlandırılmış kart!! El koyunuz.',
+		37 => 'Lütfen banka güvenliğini arayınız.',
+		38 => 'Şifre giriş limiti aşıldı!! El koyunuz.',
+		39 => 'Kredi hesabı tanımsız.',
+		41 => 'Kayıp kart!!! Karta el koyunuz.',
+		43 => 'Çalıntı kart!!! Karta el koyunuz.',
+		51 => 'Hesap müsait değil.',
+		52 => 'Çek hesabı tanımsız.',
+		53 => 'Hesap tanımsız.',
+		54 => 'Vadesi dolmuş kart.',
+		55 => 'Şifresi hatalı.',
+		56 => 'Bu kart mevcut değil.',
+		57 => 'Kart sahibi bu işlemi yapamaz.',
+		58 => 'Bu işlemi yapmanıza müsade edilmiyor.',
+		61 => 'Para çekme limiti aşılıyor.',
+		62 => 'Kısıtlı kart / Kendi ülkesinde geçerli.',
+		63 => 'Bu işlemi yapmaya yetkili değilsiniz.',
+		65 => 'Günlük işlem adedi dolmuş.',
+		68 => 'Cevap çok geç geldi. İşlemi iptal ediniz.',
+		75 => 'Şifre giriş limiti aşıldı.',
+		76 => 'Şifre hatalı. Şifre giriş limiti aşıldı.',
+		77 => 'Orjinal işlem ile uyumsuz bilgi alındı.',
+		78 => 'Hesap bakiyesi mevcut değil.',
+		80 => 'Hatalı tarih. / Network hatası.',
+		81 => 'Şifreleme / Yabancı network hatası.',
+		82 => 'Hatalı CVV. / Issuer cevap vermedi.',
+		83 => 'Şifre doğrulanamıyor. / İletişim hatası.',
+		85 => 'Hesap doğrulandı.',
+		86 => 'Şifre doğrulanamıyor.',
+		88 => 'Şifreleme hatası.',
+		89 => 'Authentication hatası.',
+		90 => 'Gün sonu işlemleri yapılıyor.',
+		91 => 'Bankasına ulaşılamıyor.',
+		92 => 'İşlem gerekli yere yönlendirilemedi.',
+		93 => 'Hukuki nedenlerle işleminiz rededildi.',
+		94 => 'Duplicate transmission.',
+		95 => 'Günlük toplamlar hatalı / İptal rededildi.',
+		96 => 'Sistem hatası.',
+		98 => 'Duplicate reversal.'
+    ];
+
+    public static function getMdStatusMessage($code): string
+    {
+        return self::STATUSES[(int)$code] ?? 'Hata bilinmiyor.';
+    }
+}

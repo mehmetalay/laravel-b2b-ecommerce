@@ -1,0 +1,34 @@
+/* Basit Toastr CSS */
+.notifications {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.notification {
+    padding: 12px 18px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 14px;
+    min-width: 200px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeInUp 0.3s forwards, fadeOut 0.5s 3s forwards;
+}
+
+.notification.success { background: #28a745; }
+.notification.error { background: #dc3545; }
+.notification.warning { background: #ffc107; color: #000; }
+.notification.info { background: #17a2b8; }
+
+@keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeOut {
+    to { opacity: 0; transform: translateY(-10px); }
+}
