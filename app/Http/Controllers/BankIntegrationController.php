@@ -173,7 +173,7 @@ class BankIntegrationController extends Controller
                 $result = $this->paymentOrchestrationService->start3D($gatewayRequest);
 
                 if (!$result->success || empty($result->html)) {
-                    return view('payments.post-message', [
+                    return view('frontend.pages.checkout.post-message', [
                         'type' => 'error',
                         'message' => $result->message ?: 'Islem baslatilamadi. Lutfen tekrar deneyiniz.',
                     ]);
@@ -224,7 +224,7 @@ class BankIntegrationController extends Controller
             if (!$payment) {
                 logSession("paymentResponse payment bulunamadi. paymentId {$paymentId}", $maskedData, 'error', 'payment_logs');
 
-                return view('payments.post-message', [
+                return view('frontend.pages.checkout.post-message', [
                     'type' => 'error',
                     'message' => 'Odeme kaydi bulunamadi.',
                 ]);
@@ -241,7 +241,7 @@ class BankIntegrationController extends Controller
                     'payment_logs'
                 );
 
-                return view('payments.post-message', [
+                return view('frontend.pages.checkout.post-message', [
                     'type' => 'error',
                     'message' => 'Gecersiz callback imzasi.',
                 ]);
@@ -270,7 +270,7 @@ class BankIntegrationController extends Controller
         } catch (\Throwable $e) {
             logException($e, 'BankIntegrationController::paymentResponse', true);
 
-            return view('payments.post-message', [
+            return view('frontend.pages.checkout.post-message', [
                 'type' => 'error',
                 'message' => 'Odeme durumunuz kisa sure icinde kontrol edilerek guncellenecektir.',
             ]);
@@ -369,7 +369,7 @@ class BankIntegrationController extends Controller
             $result = $this->paymentOrchestrationService->start3D($gatewayRequest);
 
             if (!$result->success || empty($result->html)) {
-                return view('payments.post-message', [
+                return view('frontend.pages.checkout.post-message', [
                     'type' => 'error',
                     'message' => $result->message ?: 'Islem baslatilamadi. Lutfen tekrar deneyiniz.',
                 ]);
@@ -400,7 +400,7 @@ class BankIntegrationController extends Controller
             if (!$paymentLink) {
                 logSession("paymentLinkResponse paymentLink bulunamadi. paymentLinkId {$paymentLinkId}", $maskedData, 'error', 'payment_logs');
 
-                return view('payments.post-message', [
+                return view('frontend.pages.checkout.post-message', [
                     'type' => 'error',
                     'message' => 'Odeme link kaydi bulunamadi.',
                 ]);
@@ -417,7 +417,7 @@ class BankIntegrationController extends Controller
                     'payment_logs'
                 );
 
-                return view('payments.post-message', [
+                return view('frontend.pages.checkout.post-message', [
                     'type' => 'error',
                     'message' => 'Gecersiz callback imzasi.',
                 ]);
@@ -447,7 +447,7 @@ class BankIntegrationController extends Controller
         } catch (\Throwable $e) {
             logException($e, 'BankIntegrationController::paymentLinkResponse', true);
 
-            return view('payments.post-message', [
+            return view('frontend.pages.checkout.post-message', [
                 'type' => 'error',
                 'message' => 'Odeme durumunuz kisa sure icinde kontrol edilecektir.',
             ]);
@@ -486,7 +486,7 @@ class BankIntegrationController extends Controller
 
         logSession("{$bankIntegrationName} {$type}Id: {$model->id} odeme basarili.", null, 'info', 'payment_logs');
 
-        return view('payments.post-message', [
+        return view('frontend.pages.checkout.post-message', [
             'type' => 'success',
             'message' => $message,
             'url' => $url,
@@ -506,7 +506,7 @@ class BankIntegrationController extends Controller
 
         logSession("{$bankIntegrationName} {$type}Id: {$model->id} odeme basarisiz: {$message}", null, 'info', 'payment_logs');
 
-        return view('payments.post-message', [
+        return view('frontend.pages.checkout.post-message', [
             'type' => 'error',
             'message' => $message,
         ]);

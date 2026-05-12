@@ -43,6 +43,6 @@ class ContractSignatureController extends Controller
             ->orderBy('signed_at', 'desc')
             ->paginate(100);
 
-        return view('admin.contract.signatures.index', compact('items', 'firstDate', 'lastDate'));
+        return view('backend.pages.settings.contract.signatures.index', compact('items', 'firstDate', 'lastDate'));
     }
 }

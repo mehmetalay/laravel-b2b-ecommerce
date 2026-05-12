@@ -26,7 +26,7 @@ class GeneralInfoController extends Controller
     {
         $general_info = $this->service->getFirst();
 
-        return view('admin.settings.general-infos.index', compact('general_info'));
+        return view('backend.pages.settings.general-infos.index', compact('general_info'));
     }
 
     /**

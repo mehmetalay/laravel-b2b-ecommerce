@@ -1,5 +1,5 @@
 {
-    "/js/frontend/products.js": "/js/frontend/products.js?id=868c12a8149a6da48c3a6d08bb7218f7",
+    "/js/frontend/modules/products/index.js": "/js/frontend/modules/products/index.js?id=3f27c3aaed625436ed87af8364f3e91d",
     "/js/frontend/modules/auth/login.js": "/js/frontend/modules/auth/login.js?id=88e326df0df212851436c289ae610e04",
     "/js/frontend/modules/auth/forgot-password.js": "/js/frontend/modules/auth/forgot-password.js?id=85a84477691dc7f426eaa6560c0fff5a",
     "/js/frontend/modules/auth/reset-password.js": "/js/frontend/modules/auth/reset-password.js?id=150d8aca2ee2ada80e944b8d9831ffec",
@@ -16,11 +16,11 @@
     "/js/frontend/modules/collections/promissories-create.js": "/js/frontend/modules/collections/promissories-create.js?id=93a78c875bf111d86d278a306dcc61e5",
     "/js/frontend/modules/mail/send-modal.js": "/js/frontend/modules/mail/send-modal.js?id=107fa6f873f35bbe61c29e2d8bdf7ce8",
     "/js/frontend/modules/search/autocomplete.js": "/js/frontend/modules/search/autocomplete.js?id=0f1f1f90ad77eaed0539c1e85d75ab2d",
-    "/js/frontend/modules/homepage/index.js": "/js/frontend/modules/homepage/index.js?id=7fec824b227bf28488eaa4699389b8bd",
-    "/js/admin/modules/campaigns/index.js": "/js/admin/modules/campaigns/index.js?id=68e125b3dd30d05c3876bea4b9909b39",
-    "/js/admin/modules/homepage-blocks/index.js": "/js/admin/modules/homepage-blocks/index.js?id=0db44cbe4b342ebae3bdd77c287176cd",
-    "/js/admin/modules/import/erp-import.js": "/js/admin/modules/import/erp-import.js?id=301ac98e0b37c065b4f365da1b657521",
-    "/js/admin/modules/payments/index.js": "/js/admin/modules/payments/index.js?id=55f15aa06a611b1b8156aa6046da9eb6",
-    "/js/admin/modules/settings/additional-settings-tagify.js": "/js/admin/modules/settings/additional-settings-tagify.js?id=cbf83f14ce9456a2c98fce3ce5d855c7",
+    "/js/frontend/modules/home/index.js": "/js/frontend/modules/home/index.js?id=1df6723f46f142beb7ca0101d579de09",
+    "/js/backend/modules/campaigns/index.js": "/js/backend/modules/campaigns/index.js?id=e26081e75ca4fa6b44384a40fe5ea209",
+    "/js/backend/modules/homepage-blocks/index.js": "/js/backend/modules/homepage-blocks/index.js?id=d3526acad30269857468d840890d7727",
+    "/js/backend/modules/import/erp-import.js": "/js/backend/modules/import/erp-import.js?id=1a33a2e2364d47c535815d42c2c06f34",
+    "/js/backend/modules/payments/index.js": "/js/backend/modules/payments/index.js?id=db2026771d71e2560c39b8e42baa92a2",
+    "/js/backend/modules/settings/additional-settings-tagify.js": "/js/backend/modules/settings/additional-settings-tagify.js?id=34eb1fdd4032f60a5dad42b5eeb67c92",
     "/js/shared/index.js": "/js/shared/index.js?id=c568dcfd516918dfe7150278bdc0e787"
 }

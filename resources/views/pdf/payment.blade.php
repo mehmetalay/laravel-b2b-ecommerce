@@ -87,12 +87,12 @@
                 </tr>
             </tbody>
         </table>
-        <div style="margin-bottom: 10px; font-size: 12px;">Ödemeniz, {{ general_info('company_official_name', 'ÖZDOĞAN HIRDAVAT SAN. TİC. LTD. ŞTİ.') }} aracılığıyla "<b>{{ str_upper($spokenPrice) }}</b>" olarak tahsil edilmiştir.</div>
+        <div style="margin-bottom: 10px; font-size: 12px;">Ödemeniz, {{ general_info('company_official_name', config('app.name')) }} aracılığıyla "<b>{{ str_upper($spokenPrice) }}</b>" olarak tahsil edilmiştir.</div>
         <hr style="border: 0; border-top: 1px solid #999;">
         <div style="margin-bottom: 10px; font-size: 11px;">Cari hesaba mahsuben, 3D Secure (şifreli doğrulama) sistemi üzerinden sanal POS aracılığıyla kredi kartı tahsilatı gerçekleştirilmiştir.</div>
         <div style="margin-bottom: 10px; font-size: 11px;">Bu makbuz, kart hamilinin işlemi kendi isteğiyle ve güvenli ödeme altyapısı üzerinden onayladığını gösterir.</div>
-        <div style="margin-bottom: 10px; font-size: 11px;">Kart hamili, bu işlemle ilgili olarak gerek banka, gerekse {{ general_info('company_official_name', 'ÖZDOĞAN HIRDAVAT SAN. TİC. LTD. ŞTİ.') }} nezdinde herhangi bir itiraz, iade veya dava hakkı bulunmadığını kabul ve taahhüt eder.</div>
-        <div style="margin-bottom: 10px; font-size: 11px;">Makbuzda yer alan bilgiler ile kurum kayıtlarının uyuşmaması halinde, {{ general_info('company_official_name', 'ÖZDOĞAN HIRDAVAT SAN. TİC. LTD. ŞTİ.') }} kayıtları esas alınır.</div>
+        <div style="margin-bottom: 10px; font-size: 11px;">Kart hamili, bu işlemle ilgili olarak gerek banka, gerekse {{ general_info('company_official_name', config('app.name')) }} nezdinde herhangi bir itiraz, iade veya dava hakkı bulunmadığını kabul ve taahhüt eder.</div>
+        <div style="margin-bottom: 10px; font-size: 11px;">Makbuzda yer alan bilgiler ile kurum kayıtlarının uyuşmaması halinde, {{ general_info('company_official_name', config('app.name')) }} kayıtları esas alınır.</div>
         <div style="margin-bottom: 30px; font-size: 11px;">Tüm işlemler, güvenli çevrimiçi ödeme altyapısı üzerinden gerçekleştirilmiştir.</div>
         <table style="width: 100%;">
             <tbody>

@@ -41,28 +41,28 @@ class CartController extends Controller
     {
         logSession('Sepet sayfasına erişildi.', null, 'info', 'cart_logs');
 
-        return view('carts.index');
+        return view('frontend.pages.cart.index');
     }
 
     public function list()
     {
         $this->cartService->forgetCache();
 
-        return view('carts.list');
+        return view('frontend.pages.cart.list');
     }
 
     public function header()
     {
         $this->cartService->forgetCache();
 
-        return view('carts.header');
+        return view('frontend.pages.cart.header');
     }
 
     public function summary()
     {
         $this->cartService->forgetCache();
 
-        return view('carts.summary');
+        return view('frontend.pages.cart.summary');
     }
 
     public function headerCount()
@@ -848,7 +848,7 @@ class CartController extends Controller
             ->activeAndValid()
             ->get();
 
-        return view('carts.partials.campaign-modal', compact('allCampaigns', 'cartService', 'campaignService'));
+        return view('frontend.pages.cart.partials._campaign-modal', compact('allCampaigns', 'cartService', 'campaignService'));
     }
 
     public function campaignModalBody()
@@ -860,7 +860,7 @@ class CartController extends Controller
             ->activeAndValid()
             ->get();
 
-        return view('carts.partials.campaign-modal-body', compact('allCampaigns', 'cartService', 'campaignService'));
+        return view('frontend.pages.cart.partials._campaign-modal-body', compact('allCampaigns', 'cartService', 'campaignService'));
     }
 
     public function removeCampaign()
@@ -964,7 +964,7 @@ class CartController extends Controller
             ->map(fn($rows) => (int) $rows->sum('quantity'))
             ->toArray();
 
-        return view('carts.partials.free-product-gift-modal', compact('campaign', 'gifts', 'giftLimit', 'selectedGifts'));
+        return view('frontend.pages.cart.partials._free-product-gift-modal', compact('campaign', 'gifts', 'giftLimit', 'selectedGifts'));
     }
 
     public function selectFreeProductGifts(Request $request)

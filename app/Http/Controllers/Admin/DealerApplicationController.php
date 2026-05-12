@@ -31,7 +31,7 @@ class DealerApplicationController extends Controller
             perPage: $perPage
         );
 
-        return view('admin.dealer-applications.index', compact('items'));
+        return view('backend.pages.dealers.dealer-applications.index', compact('items'));
     }
 
     public function create()
@@ -48,7 +48,7 @@ class DealerApplicationController extends Controller
     {
         $dealer_application = $this->dealerApplicationAdminService->findById((int) $dealer_application->id);
 
-        return view('admin.dealer-applications.show', compact('dealer_application'));
+        return view('backend.pages.dealers.dealer-applications.show', compact('dealer_application'));
     }
 
     public function edit($id)

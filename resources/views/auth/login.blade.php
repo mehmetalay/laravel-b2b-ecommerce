@@ -1,4 +1,4 @@
-@extends('layouts.login')
+@extends('frontend.layouts.login')
 
 @section('content')
     <section class="b2b-login">

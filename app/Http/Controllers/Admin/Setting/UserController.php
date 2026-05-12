@@ -28,7 +28,7 @@ class UserController extends Controller
             })
             ->paginate(100);
 
-        return view('admin.settings.users.index', compact('items'));
+        return view('backend.pages.settings.users.index', compact('items'));
     }
 
     /**
@@ -36,7 +36,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.settings.users.create');
+        return view('backend.pages.settings.users.create');
     }
 
     /**
@@ -75,7 +75,7 @@ class UserController extends Controller
      */
     public function edit(Admin $user)
     {
-        return view('admin.settings.users.edit', compact('user'));
+        return view('backend.pages.settings.users.edit', compact('user'));
     }
 
     /**

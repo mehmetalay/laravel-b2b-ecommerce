@@ -70,7 +70,7 @@ class HomepageController extends Controller
                         return '';
                     }
 
-                    return view('homepage.partials.sliders', compact('sliders', 'device'))->render();
+                    return view('frontend.pages.home.partials._sliders', compact('sliders', 'device'))->render();
                 }
             );
     }
@@ -90,7 +90,7 @@ class HomepageController extends Controller
                         return '';
                     }
 
-                    return view('homepage.partials.payments', compact('sliders', 'device'))->render();
+                    return view('frontend.pages.home.partials._payments', compact('sliders', 'device'))->render();
                 }
             );
     }
@@ -110,7 +110,7 @@ class HomepageController extends Controller
                         return '';
                     }
 
-                    return view('homepage.partials.categories', compact('sliders', 'device'))->render();
+                    return view('frontend.pages.home.partials._categories', compact('sliders', 'device'))->render();
                 }
             );
     }
@@ -130,7 +130,7 @@ class HomepageController extends Controller
                         return '';
                     }
 
-                    return view('homepage.partials.campaigns', compact('sliders', 'device'))->render();
+                    return view('frontend.pages.home.partials._campaigns', compact('sliders', 'device'))->render();
                 }
             );
     }
@@ -143,7 +143,7 @@ class HomepageController extends Controller
             return '';
         }
 
-        return view('homepage.partials.brands', compact('brands'))->render();
+        return view('frontend.pages.home.partials._brands', compact('brands'))->render();
     }
 
     protected function blocks($locale)
@@ -155,7 +155,7 @@ class HomepageController extends Controller
                     return '';
                 }
                 
-                return view('homepage.partials.blocks', compact('blocks'))->render();
+                return view('frontend.pages.home.partials._blocks', compact('blocks'))->render();
             });
     }
 }

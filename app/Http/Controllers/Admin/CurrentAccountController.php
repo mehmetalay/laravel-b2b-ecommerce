@@ -38,7 +38,7 @@ class CurrentAccountController extends Controller
             ->orderBy('name', 'ASC')
             ->paginate(100);
 
-        return view('admin.current-accounts.index', compact('items'));
+        return view('backend.pages.dealers.current-accounts.index', compact('items'));
     }
 
     /**
@@ -78,7 +78,7 @@ class CurrentAccountController extends Controller
             $categories = app(CategoryService::class)->getAllActiveCategories()->whereIn('id', $categoryIds)->keyBy('id');
         }
 
-        return view('admin.current-accounts.edit', compact('current_account', 'categoryIds', 'categories'));
+        return view('backend.pages.dealers.current-accounts.edit', compact('current_account', 'categoryIds', 'categories'));
     }
 
     /**

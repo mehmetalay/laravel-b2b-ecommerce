@@ -34,7 +34,7 @@ class CustomerStatementMail extends Mailable
             'totals' => $totals,
         ])->output();
 
-        $mailBody = 'Müşteri ekstresi ektedir.<br><br>Güzel günler dileriz,<br><strong>' . general_info('company_official_name', 'ÖZDOĞAN HIRDAVAT SAN. TİC. LTD. ŞTİ.') . '</strong>';
+        $mailBody = 'Müşteri ekstresi ektedir.<br><br>Güzel günler dileriz,<br><strong>' . general_info('company_official_name', config('app.name')) . '</strong>';
 
         return $this->to($this->getMailRecipients())
             ->subject(config('app.name') . ' | Müşteri Ekstresi')

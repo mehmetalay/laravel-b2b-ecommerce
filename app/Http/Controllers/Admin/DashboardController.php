@@ -90,6 +90,6 @@ class DashboardController extends Controller
             })
             ->count();
 
-        return view('admin.index', compact('orders', 'total_sales_amount_tl', 'total_sales_amount_usd', 'total_number_of_orders', 'numberOfOrdersAwaitingApproval', 'total_number_of_sold_products', 'total_number_of_plasiyer_orders', 'total_number_of_user_orders'));
+        return view('backend.pages.dashboard.index', compact('orders', 'total_sales_amount_tl', 'total_sales_amount_usd', 'total_number_of_orders', 'numberOfOrdersAwaitingApproval', 'total_number_of_sold_products', 'total_number_of_plasiyer_orders', 'total_number_of_user_orders'));
     }
 }

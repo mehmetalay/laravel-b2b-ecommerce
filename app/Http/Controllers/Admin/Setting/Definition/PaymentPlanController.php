@@ -24,7 +24,7 @@ class PaymentPlanController extends Controller
             })
             ->paginate(100);
 
-        return view('admin.settings.definitions.payment-plans.index', compact('items'));
+        return view('backend.pages.settings.definitions.payment-plans.index', compact('items'));
     }
 
     /**

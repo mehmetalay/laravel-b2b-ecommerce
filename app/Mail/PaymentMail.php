@@ -36,7 +36,7 @@ class PaymentMail extends Mailable
      */
     public function build()
     {
-        $mailBody = config('app.name') . ' sitesinde ' . format_date_time($this->payment->created_at) . ' tarihinde gerçekleştirilen ödeme işlemine ait ' . $this->payment->id . ' numaralı Online Ödeme Dekontu ekte yer almaktadır.<br><br>Güzel günler dileriz,<br><strong>' . general_info('company_official_name', 'ÖZDOĞAN HIRDAVAT SAN. TİC. LTD. ŞTİ.') . '</strong>';
+        $mailBody = config('app.name') . ' sitesinde ' . format_date_time($this->payment->created_at) . ' tarihinde gerçekleştirilen ödeme işlemine ait ' . $this->payment->id . ' numaralı Online Ödeme Dekontu ekte yer almaktadır.<br><br>Güzel günler dileriz,<br><strong>' . general_info('company_official_name', config('app.name')) . '</strong>';
 
         return $this->to($this->getMailRecipients())
             ->subject(config('app.name') . ' | Online Ödeme Dekontu')

@@ -62,7 +62,7 @@ class Kernel extends ConsoleKernel
         //     }
         // })->hourly()->between('09:00', '18:00');//everyMinute
 
-        // Delta sync — her 10 dk (sadece değişen ürünler + loglama)
+        // Delta sync â€” her 10 dk (sadece değişen ürünler + loglama)
         $schedule->call(function () {
             try {
                 $this->vw_StokKartB2B_Delta();
@@ -71,7 +71,7 @@ class Kernel extends ConsoleKernel
             }
         })->everyTenMinutes();
 
-        // Full sync — gece 03:00 (tüm ürünler + pasifleştirme)
+        // Full sync â€” gece 03:00 (tüm ürünler + pasifleştirme)
         $schedule->call(function () {
             try {
                 $this->vw_StokKartB2B();
@@ -556,48 +556,48 @@ class Kernel extends ConsoleKernel
 
                 // --- Değişiklik Loglama ---
                 if (!$existing) {
-                    logSession("[NEW] {$code} — {$item->StokAdi}", null, 'info', 'erp/product');
+                    logSession("[NEW] {$code} â€” {$item->StokAdi}", null, 'info', 'erp/product');
                     $changeCount++;
                 } else {
                     $changes = [];
 
                     // Fiyat değişimleri
-                    if ((float) $existing->price_1 != (float) $price1) $changes[] = "price_1: {$existing->price_1} → {$price1}";
-                    if ((float) $existing->price_2 != (float) $price2) $changes[] = "price_2: {$existing->price_2} → {$price2}";
-                    if ((float) $existing->price_3 != (float) $price3) $changes[] = "price_3: {$existing->price_3} → {$price3}";
-                    if ((float) $existing->price_4 != (float) $price4) $changes[] = "price_4: {$existing->price_4} → {$price4}";
+                    if ((float) $existing->price_1 != (float) $price1) $changes[] = "price_1: {$existing->price_1} â†’ {$price1}";
+                    if ((float) $existing->price_2 != (float) $price2) $changes[] = "price_2: {$existing->price_2} â†’ {$price2}";
+                    if ((float) $existing->price_3 != (float) $price3) $changes[] = "price_3: {$existing->price_3} â†’ {$price3}";
+                    if ((float) $existing->price_4 != (float) $price4) $changes[] = "price_4: {$existing->price_4} â†’ {$price4}";
 
                     if (!empty($changes)) {
-                        logSession("[PRICE] {$code} — " . implode(', ', $changes), null, 'info', 'erp/product');
+                        logSession("[PRICE] {$code} â€” " . implode(', ', $changes), null, 'info', 'erp/product');
                         $changeCount++;
                     }
 
                     // İndirim oranı değişimleri
                     $discountChanges = [];
-                    if ((float) $existing->price_2_discount_rate != (float) $price2DiscountRate) $discountChanges[] = "price_2_discount_rate: {$existing->price_2_discount_rate} → {$price2DiscountRate}";
-                    if ((float) $existing->price_3_discount_rate != (float) $price3DiscountRate) $discountChanges[] = "price_3_discount_rate: {$existing->price_3_discount_rate} → {$price3DiscountRate}";
-                    if ((float) $existing->price_4_discount_rate != (float) $price4DiscountRate) $discountChanges[] = "price_4_discount_rate: {$existing->price_4_discount_rate} → {$price4DiscountRate}";
+                    if ((float) $existing->price_2_discount_rate != (float) $price2DiscountRate) $discountChanges[] = "price_2_discount_rate: {$existing->price_2_discount_rate} â†’ {$price2DiscountRate}";
+                    if ((float) $existing->price_3_discount_rate != (float) $price3DiscountRate) $discountChanges[] = "price_3_discount_rate: {$existing->price_3_discount_rate} â†’ {$price3DiscountRate}";
+                    if ((float) $existing->price_4_discount_rate != (float) $price4DiscountRate) $discountChanges[] = "price_4_discount_rate: {$existing->price_4_discount_rate} â†’ {$price4DiscountRate}";
 
                     if (!empty($discountChanges)) {
-                        logSession("[DISCOUNT] {$code} — " . implode(', ', $discountChanges), null, 'info', 'erp/product');
+                        logSession("[DISCOUNT] {$code} â€” " . implode(', ', $discountChanges), null, 'info', 'erp/product');
                         $changeCount++;
                     }
 
                     // Stok değişimi
                     if ((int) $existing->stock != (int) $stock) {
-                        logSession("[STOCK] {$code} — stock: {$existing->stock} → {$stock}", null, 'info', 'erp/product');
+                        logSession("[STOCK] {$code} â€” stock: {$existing->stock} â†’ {$stock}", null, 'info', 'erp/product');
                         $changeCount++;
                     }
 
                     // Status değişimi
                     if ((int) $existing->status != (int) $status) {
-                        logSession("[STATUS] {$code} — status: {$existing->status} → {$status}", null, 'warning', 'erp/product');
+                        logSession("[STATUS] {$code} â€” status: {$existing->status} â†’ {$status}", null, 'warning', 'erp/product');
                         $changeCount++;
                     }
 
                     // Box quantity değişimi
                     if ((int) $existing->box_quantity != (int) $boxQuantity || (int) $existing->box_quantity_must_be_exact != (int) $boxQuantityMustBeExact) {
-                        logSession("[BOX_QTY] {$code} — box_quantity: {$existing->box_quantity} → {$boxQuantity}, must_be_exact: {$existing->box_quantity_must_be_exact} → {$boxQuantityMustBeExact}", null, 'info', 'erp/product');
+                        logSession("[BOX_QTY] {$code} â€” box_quantity: {$existing->box_quantity} â†’ {$boxQuantity}, must_be_exact: {$existing->box_quantity_must_be_exact} â†’ {$boxQuantityMustBeExact}", null, 'info', 'erp/product');
                         $changeCount++;
                     }
                 }
@@ -702,7 +702,7 @@ class Kernel extends ConsoleKernel
 
     /**
      * SQL Server'dan gelen string değerleri tutarlı UTF-8'e normalize eder.
-     * Türkçe İ/ı/�?/ş/Ç/ç/�?/ğ/Ö/ö/Ü/ü gibi karakterlerin byte tutarsızlığını önler.
+     * Türkçe İ/ı/ï¿½?/ş/Ç/ç/ï¿½?/ğ/Ö/ö/Ü/ü gibi karakterlerin byte tutarsızlığını önler.
      */
     private function normalizeErpString(?string $value): ?string
     {

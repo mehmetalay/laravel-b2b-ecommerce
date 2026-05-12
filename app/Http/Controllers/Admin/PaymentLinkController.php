@@ -35,12 +35,12 @@ class PaymentLinkController extends Controller
             ->orderBy('id', 'DESC')
             ->paginate(50);
 
-        return view('admin.payment-links.index', compact('items'));
+        return view('backend.pages.payments.links.index', compact('items'));
     }
 
     public function create()
     {
-        return view('admin.payment-links.create');
+        return view('backend.pages.payments.links.create');
     }
 
     public function store(PaymentLinkRequest $request)
@@ -74,7 +74,7 @@ class PaymentLinkController extends Controller
 
     public function edit(PaymentLink $paymentLink)
     {
-        return view('admin.payment-links.edit', compact('paymentLink'));
+        return view('backend.pages.payments.links.edit', compact('paymentLink'));
     }
 
     public function update(PaymentLinkRequest $request, PaymentLink $paymentLink)

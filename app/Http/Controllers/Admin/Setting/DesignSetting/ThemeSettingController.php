@@ -26,7 +26,7 @@ class ThemeSettingController extends Controller
     {
         $themeSetting = $this->service->getFirst();
 
-        return view('admin.settings.design-settings.theme-settings.index', compact('themeSetting'));
+        return view('backend.pages.settings.design-settings.theme-settings.index', compact('themeSetting'));
     }
 
     /**

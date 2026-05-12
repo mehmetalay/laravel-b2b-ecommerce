@@ -29,12 +29,12 @@ class SurveyController extends Controller
     {
         $items = ($this->listAdminSurveysAction)();
 
-        return view('admin.surveys.index', compact('items'));
+        return view('backend.pages.settings.surveys.index', compact('items'));
     }
 
     public function create()
     {
-        return view('admin.surveys.create');
+        return view('backend.pages.settings.surveys.create');
     }
 
     public function store(SurveyRequest $request)
@@ -56,7 +56,7 @@ class SurveyController extends Controller
     {
         $surveyJson = ($this->buildSurveyEditPayloadAction)($survey);
 
-        return view('admin.surveys.edit', compact('survey', 'surveyJson'));
+        return view('backend.pages.settings.surveys.edit', compact('survey', 'surveyJson'));
     }
 
     public function update(SurveyRequest $request, Survey $survey)
@@ -82,6 +82,6 @@ class SurveyController extends Controller
     {
         $payload = ($this->buildSurveyResultsPayloadAction)($survey);
 
-        return view('admin.surveys.results', $payload);
+        return view('backend.pages.settings.surveys.results', $payload);
     }
 }

@@ -15,7 +15,7 @@ class PaymentFlowPresenter
                 200,
                 ['Content-Type' => 'text/html; charset=UTF-8']
             ),
-            PaymentFlowResult::TYPE_POST_MESSAGE => view('payments.post-message', $result->payload),
+            PaymentFlowResult::TYPE_POST_MESSAGE => view('frontend.pages.checkout.post-message', $result->payload),
             default => response()->json(['error' => 'Unsupported presentation type.'], 500),
         };
     }

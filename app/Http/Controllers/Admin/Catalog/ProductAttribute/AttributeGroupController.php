@@ -21,12 +21,12 @@ class AttributeGroupController extends Controller
 
     public function index()
     {
-        return view('admin.catalog.product-attribute.attribute-group.index');
+        return view('backend.pages.catalog.product-attribute.attribute-group.index');
     }
 
     public function create()
     {
-        return view('admin.catalog.product-attribute.attribute-group.create');
+        return view('backend.pages.catalog.product-attribute.attribute-group.create');
     }
 
     public function store(Request $request)
@@ -70,7 +70,7 @@ class AttributeGroupController extends Controller
 
     public function edit(AttributeGroup $attributeGroup)
     {
-        return view('admin.catalog.product-attribute.attribute-group.edit', ['model' => $attributeGroup]);
+        return view('backend.pages.catalog.product-attribute.attribute-group.edit', ['model' => $attributeGroup]);
     }
 
     public function update(Request $request, AttributeGroup $attributeGroup)

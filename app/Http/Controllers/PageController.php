@@ -11,21 +11,21 @@ class PageController extends Controller
 
     public function aboutUs()
     {
-        return view('pages.about-us');
+        return view('frontend.pages.pages.about-us');
     }
 
     public function contactUs()
     {
-        return view('pages.contact-us');
+        return view('frontend.pages.pages.contact-us');
     }
 
     public function privacyCommitment()
     {
-        return view('pages.privacy-commitment');
+        return view('frontend.pages.pages.privacy-commitment');
     }
 
     public function ourBankInformation()
     {
-        return view('pages.our-bank-information');
+        return view('frontend.pages.pages.our-bank-information');
     }
 }

@@ -17,7 +17,7 @@ class LoginController extends Controller
 
     public function loginPage()
     {
-        return view('admin.auth.login');
+        return view('backend.pages.auth.login');
     }
 
     public function login()

@@ -29,7 +29,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('admin.catalog.products.index');
+        return view('backend.pages.catalog.products.index');
     }
 
     /**
@@ -39,7 +39,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.catalog.products.create');
+        return view('backend.pages.catalog.products.create');
     }
 
     /**
@@ -72,7 +72,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('admin.catalog.products.edit', compact('product'));
+        return view('backend.pages.catalog.products.edit', compact('product'));
     }
 
     /**
@@ -159,7 +159,7 @@ class ProductController extends Controller
                 : [];
         }
 
-        return view('admin.catalog.products.partials.attributes', [
+        return view('backend.pages.catalog.products.partials._attributes', [
             'attributes' => $attributes,
             'productId' => (int) ($validated['product_id'] ?? 0),
             'selectedAttributeValueIds' => $selectedAttributeValueIds,

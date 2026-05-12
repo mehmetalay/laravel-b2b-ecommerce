@@ -35,6 +35,6 @@ class DashboardController extends Controller
             ->where('user_id', $account->current_account_id)
             ->sum('amount_paid');
 
-        return view('account.dashboard', compact('balance', 'orderTotal', 'paymentTotal', 'currency'));
+        return view('frontend.pages.account.dashboard', compact('balance', 'orderTotal', 'paymentTotal', 'currency'));
     }
 }

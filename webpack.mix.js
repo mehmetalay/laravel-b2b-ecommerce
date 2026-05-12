@@ -11,7 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/frontend/products.js', 'public/js/frontend')
+mix.js('resources/js/frontend/modules/products/index.js', 'public/js/frontend/modules/products')
     .js('resources/js/frontend/modules/auth/login.js', 'public/js/frontend/modules/auth')
     .js('resources/js/frontend/modules/auth/forgot-password.js', 'public/js/frontend/modules/auth')
     .js('resources/js/frontend/modules/auth/reset-password.js', 'public/js/frontend/modules/auth')
@@ -28,11 +28,11 @@ mix.js('resources/js/frontend/products.js', 'public/js/frontend')
     .js('resources/js/frontend/modules/collections/promissories-create.js', 'public/js/frontend/modules/collections')
     .js('resources/js/frontend/modules/mail/send-modal.js', 'public/js/frontend/modules/mail')
     .js('resources/js/frontend/modules/search/autocomplete.js', 'public/js/frontend/modules/search')
-    .js('resources/js/frontend/modules/homepage/index.js', 'public/js/frontend/modules/homepage')
-    .js('resources/js/admin/modules/campaigns/index.js', 'public/js/admin/modules/campaigns')
-    .js('resources/js/admin/modules/homepage-blocks/index.js', 'public/js/admin/modules/homepage-blocks')
-    .js('resources/js/admin/modules/import/erp-import.js', 'public/js/admin/modules/import')
-    .js('resources/js/admin/modules/payments/index.js', 'public/js/admin/modules/payments')
-    .js('resources/js/admin/modules/settings/additional-settings-tagify.js', 'public/js/admin/modules/settings')
+    .js('resources/js/frontend/modules/home/index.js', 'public/js/frontend/modules/home')
+    .js('resources/js/backend/modules/campaigns/index.js', 'public/js/backend/modules/campaigns')
+    .js('resources/js/backend/modules/homepage-blocks/index.js', 'public/js/backend/modules/homepage-blocks')
+    .js('resources/js/backend/modules/import/erp-import.js', 'public/js/backend/modules/import')
+    .js('resources/js/backend/modules/payments/index.js', 'public/js/backend/modules/payments')
+    .js('resources/js/backend/modules/settings/additional-settings-tagify.js', 'public/js/backend/modules/settings')
     .js('resources/js/shared/index.js', 'public/js/shared')
     .version();

@@ -28,7 +28,7 @@ class PaymentReportController extends Controller
      */
     public function index()
     {
-        return view('admin.payments.index');
+        return view('backend.pages.payments.index');
     }
 
     /**

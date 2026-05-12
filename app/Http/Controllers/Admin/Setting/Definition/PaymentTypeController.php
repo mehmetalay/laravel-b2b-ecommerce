@@ -23,7 +23,7 @@ class PaymentTypeController extends Controller
             })
             ->paginate(100);
 
-        return view('admin.settings.definitions.payment-types.index', compact('items'));
+        return view('backend.pages.settings.definitions.payment-types.index', compact('items'));
     }
 
     /**

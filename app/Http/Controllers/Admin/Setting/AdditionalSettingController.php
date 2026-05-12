@@ -24,7 +24,7 @@ class AdditionalSettingController extends Controller
     {
         $additionalSetting = $this->service->getFirst();
 
-        return view('admin.settings.additional-settings.index', compact('additionalSetting'));
+        return view('backend.pages.settings.additional-settings.index', compact('additionalSetting'));
     }
 
     /**

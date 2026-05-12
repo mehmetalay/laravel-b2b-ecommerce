@@ -60,7 +60,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer([
-            'layouts.js'
+            'frontend.layouts.js'
         ], function ($view) {
             $survey = null;
             $hasParticipated = false;
@@ -82,7 +82,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer([
-            'carts.index'
+            'frontend.pages.cart.index'
         ], function ($view) {
             $view->with([
                 'allCampaigns' => Campaign::activeAndValid()->get(),
@@ -91,17 +91,17 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer([
-            'layouts.app',
+            'frontend.layouts.app',
         ], function ($view) {
             $view->with('themeSetting', app(ThemeSettingService::class)->getFirst());
         });
 
         view()->composer([
-            'layouts.modal',
-            'admin.layouts.modal',
-            'admin.catalog.products.index',
-            'admin.catalog.products.create',
-            'admin.catalog.products.edit',
+            'frontend.layouts.modal',
+            'backend.layouts.modal',
+            'backend.pages.catalog.products.index',
+            'backend.pages.catalog.products.create',
+            'backend.pages.catalog.products.edit',
         ], function ($view) {
             $view->with([
                 'brands' => app(BrandService::class)->getActiveBrands(),
@@ -110,8 +110,8 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer([
-            'admin.catalog.products.create',
-            'admin.catalog.products.edit',
+            'backend.pages.catalog.products.create',
+            'backend.pages.catalog.products.edit',
         ], function ($view) {
             $view->with([
                 'brands' => app(BrandService::class)->getActiveBrands(),
@@ -120,11 +120,11 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer([
-            'admin.reports.rep-monthly-sales.index',
-            'admin.reports.brand-targets.index',
-            'admin.reports.brand-collection-targets.index',
-            'admin.reports.monthly-top-products.index',
-            'admin.payments.index'
+            'backend.pages.dashboard.reports.rep-monthly-sales.index',
+            'backend.pages.dashboard.reports.brand-targets.index',
+            'backend.pages.dashboard.reports.brand-collection-targets.index',
+            'backend.pages.dashboard.reports.monthly-top-products.index',
+            'backend.pages.payments.index'
         ], function ($view) {
             $view->with([
                 'salesmans' => User::salesman()->active()->get()
@@ -132,9 +132,9 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer([
-            'admin.reports.brand-targets.index',
-            'admin.reports.monthly-top-products.index',
-            'admin.reports.monthly-brand-model-sales.index'
+            'backend.pages.dashboard.reports.brand-targets.index',
+            'backend.pages.dashboard.reports.monthly-top-products.index',
+            'backend.pages.dashboard.reports.monthly-brand-model-sales.index'
         ], function ($view) {
             $view->with([
                 'categories' => app(CategoryService::class)->getAllActiveCategories()
@@ -142,7 +142,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer([
-            'layouts.app'
+            'frontend.layouts.app'
         ], function ($view) {
             $updates = $this->getAllEntityLastUpdates();
 
@@ -154,10 +154,10 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer([
-            'layouts.app',
-            'admin.salesmans.create',
-            'admin.salesmans.edit',
-            'admin.current-accounts.edit'
+            'frontend.layouts.app',
+            'backend.pages.dealers.salesmans.create',
+            'backend.pages.dealers.salesmans.edit',
+            'backend.pages.dealers.current-accounts.edit'
         ], function ($view) {
             $view->with([
                 'categories' => app(CategoryService::class)->getVisibleParentCategories()
@@ -165,10 +165,10 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer([
-            'payments.payment-link.page',
-            'admin.payment-links.create',
-            'admin.payment-links.edit',
-            'admin.payments.index'
+            'frontend.pages.checkout.payment-link.page',
+            'backend.pages.payments.links.create',
+            'backend.pages.payments.links.edit',
+            'backend.pages.payments.index'
         ], function ($view) {
             $bankIntegrations = BankIntegration::with('installments')
                 ->active()
@@ -181,7 +181,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer([
-            'admin.settings.pos-managements.index'
+            'backend.pages.settings.pos-managements.index'
         ], function ($view) {
             $bankIntegrations = BankIntegration::with('installments')
                 ->orderBy('name', 'ASC')
@@ -193,7 +193,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer([
-            'layouts.modal'
+            'frontend.layouts.modal'
         ], function ($view) {
             $cargoCompanies = $this->getAllActiveCargoCompanies();
 
@@ -203,8 +203,8 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer([
-            'payments.page',
-            'layouts.modal'
+            'frontend.pages.checkout.page',
+            'frontend.layouts.modal'
         ], function ($view) {
             $account = app(CurrentAccountService::class)->currentAccount();
 
@@ -229,7 +229,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer([
-            'layouts.partials.header-top',
+            'frontend.partials.header-top',
         ], function ($view) {
             $view->with([
                 'USDExchangeRate' => app(CurrencyService::class)->getFirstByCode('USD')->selling_price,
@@ -239,8 +239,8 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer([
-            'admin.settings.users.create',
-            'admin.settings.users.edit'
+            'backend.pages.settings.users.create',
+            'backend.pages.settings.users.edit'
         ], function ($view) {
             $view->with([
                 'permissions' => $this->getAllActivePermissions()
@@ -248,8 +248,8 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer([
-            'admin.current-accounts.edit',
-            'admin.settings.additional-settings.index'
+            'backend.pages.dealers.current-accounts.edit',
+            'backend.pages.settings.additional-settings.index'
         ], function ($view) {
             $view->with([
                 'companies' => $this->getAllActiveCompanies()
@@ -257,8 +257,8 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer([
-            'admin.orders.index',
-            'admin.orders.edit'
+            'backend.pages.orders.index',
+            'backend.pages.orders.edit'
         ], function ($view) {
             $view->with([
                 'orderStatuses' => $this->getAllActiveOrderStatuses()
@@ -266,7 +266,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer([
-            'carts.index'
+            'frontend.pages.cart.index'
         ], function ($view) {
             $view->with([
                 'backedUpCarts' => app(BackedUpCartService::class)->getAllBackedUpCarts(),
@@ -276,23 +276,23 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer([
-            'carts.header',
-            'carts.summary',
+            'frontend.pages.cart.header',
+            'frontend.pages.cart.summary',
             'collections.cheques.create',
             'collections.promissories.create',
             'current-accounts.index',
             'exports.excel.cart',
-            'layouts.app',
-            'layouts.modal',
+            'frontend.layouts.app',
+            'frontend.layouts.modal',
         ], function ($view) {
             $view->with('currentAccountService', app(CurrentAccountService::class));
         });
 
         view()->composer([
-            'carts.header',
-            'carts.list',
-            'carts.index',
-            'carts.summary',
+            'frontend.pages.cart.header',
+            'frontend.pages.cart.list',
+            'frontend.pages.cart.index',
+            'frontend.pages.cart.summary',
             'exports.excel.cart',
         ], function ($view) {
             $view->with('cartService', app(CartService::class));

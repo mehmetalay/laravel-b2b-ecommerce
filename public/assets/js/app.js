@@ -16,7 +16,7 @@ function debounce(func, wait, immediate) {
 function showLoader() {
     var loader = $(`
         <div class="fullpage-loader bg-transparent">
-            <img src="/assets/images/logo.png" alt="Özdoğan" />
+            <img src="/assets/images/logo.png" alt="Logo" />
         </div>
     `).appendTo('body');
     loader.show();
@@ -105,4 +105,3 @@ $(document).on('touchstart', function(e) {
         $('input, textarea').blur();
     }
 });
-

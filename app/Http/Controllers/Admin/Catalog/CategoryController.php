@@ -32,14 +32,14 @@ class CategoryController extends Controller
 
     public function index()
     {
-        return view('admin.catalog.categories.index');
+        return view('backend.pages.catalog.categories.index');
     }
 
     public function create()
     {
         $categories = $this->service->buildTree($this->service->getAllCategories());
 
-        return view('admin.catalog.categories.create', compact('categories'));
+        return view('backend.pages.catalog.categories.create', compact('categories'));
     }
 
     public function store(CategoryRequest $request)
@@ -62,7 +62,7 @@ class CategoryController extends Controller
     {
         $categories = $this->service->buildTree($this->service->getAllCategories()->where('id', '!=', $category->id));
 
-        return view('admin.catalog.categories.edit', compact('category', 'categories'));
+        return view('backend.pages.catalog.categories.edit', compact('category', 'categories'));
     }
 
     public function update(CategoryRequest $request, Category $category)

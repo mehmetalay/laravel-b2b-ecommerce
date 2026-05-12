@@ -29,6 +29,6 @@ class Input extends Component
      */
     public function render()
     {
-        return view('components.backend.input');
+        return view('backend.components.input');
     }
 }

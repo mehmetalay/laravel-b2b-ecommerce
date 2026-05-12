@@ -26,19 +26,19 @@ class HomepageBlockController extends Controller
             ->orderBy('sort_order')
             ->paginate(50);
 
-        return view('admin.catalog.homepage-blocks.index', compact('items'));
+        return view('backend.pages.catalog.homepage-blocks.index', compact('items'));
     }
 
     public function create()
     {
-        return view('admin.catalog.homepage-blocks.create');
+        return view('backend.pages.catalog.homepage-blocks.create');
     }
 
     public function store(HomepageBlockRequest $request)
     {
         $model = $this->service->create($request);
 
-        $rowHtml = view('admin.catalog.homepage-blocks.row', compact('model'))->render();
+        $rowHtml = view('backend.pages.catalog.homepage-blocks._row', compact('model'))->render();
 
         return response()->json([
             'status' => 'success',
@@ -50,14 +50,14 @@ class HomepageBlockController extends Controller
 
     public function edit(HomepageBlock $homepageBlock)
     {
-        return view('admin.catalog.homepage-blocks.edit', ['model' => $homepageBlock]);
+        return view('backend.pages.catalog.homepage-blocks.edit', ['model' => $homepageBlock]);
     }
 
     public function update(HomepageBlockRequest $request, HomepageBlock $homepageBlock)
     {
         $this->service->update($request, $homepageBlock);
 
-        $rowHtml = view('admin.catalog.homepage-blocks.row', ['model' => $homepageBlock])->render();
+        $rowHtml = view('backend.pages.catalog.homepage-blocks._row', ['model' => $homepageBlock])->render();
 
         return response()->json([
             'status' => 'success',
@@ -81,7 +81,7 @@ class HomepageBlockController extends Controller
     {
         $items = $homepageBlock->products()->get();
 
-        return view('admin.catalog.homepage-blocks.products', compact('homepageBlock', 'items'));
+        return view('backend.pages.catalog.homepage-blocks.products', compact('homepageBlock', 'items'));
     }
 
     public function addProducts(Request $request, HomepageBlock $homepageBlock)

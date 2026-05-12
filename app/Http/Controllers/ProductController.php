@@ -198,7 +198,7 @@ class ProductController extends Controller
         $usedAttributes = [];
         $viewType = $this->setViewType();
 
-        return view('products.list', compact('type', 'products', 'usedAttributes', 'viewType'));
+        return view('frontend.pages.products.list', compact('type', 'products', 'usedAttributes', 'viewType'));
     }
 
     public function list($slug)
@@ -225,7 +225,7 @@ class ProductController extends Controller
 
         $viewType = $this->setViewType();
 
-        return view('products.list', compact('type', 'category', 'products', 'usedAttributes', 'viewType'));
+        return view('frontend.pages.products.list', compact('type', 'category', 'products', 'usedAttributes', 'viewType'));
     }
 
     public function search()
@@ -250,7 +250,7 @@ class ProductController extends Controller
 
         $viewType = $this->setViewType();
 
-        return view('products.list', compact('type', 'q', 'products', 'usedAttributes', 'viewType'));
+        return view('frontend.pages.products.list', compact('type', 'q', 'products', 'usedAttributes', 'viewType'));
     }
 
     public function brand($slug)
@@ -277,7 +277,7 @@ class ProductController extends Controller
 
         $viewType = $this->setViewType();
 
-        return view('products.list', compact('type', 'brand', 'products', 'usedAttributes', 'viewType'));
+        return view('frontend.pages.products.list', compact('type', 'brand', 'products', 'usedAttributes', 'viewType'));
     }
 
     public function block($slug)
@@ -304,7 +304,7 @@ class ProductController extends Controller
 
         $viewType = $this->setViewType();
 
-        return view('products.list', compact('type', 'block', 'products', 'usedAttributes', 'viewType'));
+        return view('frontend.pages.products.list', compact('type', 'block', 'products', 'usedAttributes', 'viewType'));
     }
 
     public function detail($slug)
@@ -349,7 +349,7 @@ class ProductController extends Controller
 
         $campaigns = $product->activeCampaigns();
 
-        return view('products.detail', compact('product', 'relatedProducts', 'campaigns'));
+        return view('frontend.pages.products.detail', compact('product', 'relatedProducts', 'campaigns'));
     }
 
     public function filter()

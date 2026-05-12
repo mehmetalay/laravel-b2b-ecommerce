@@ -1,4 +1,4 @@
-@extends('layouts.login')
+@extends('frontend.layouts.login')
 
 @section('content')
     <section class="log-in-section background-image-2 section-b-space">
@@ -24,8 +24,8 @@
                                 @csrf
                                 <div class="col-12">
                                     <div class="form-floating theme-form-floating log-in-form">
-                                        <input type="text" class="form-control" name="username" id="username" placeholder="{{ trans('translations.auth.e_posta_adresi') }}" autofocus>
-                                        <label for="username">{{ trans('translations.auth.e_posta_adresi') }}</label>
+                                        <input type="text" class="form-control" name="username" id="username" placeholder="{{ trans('translations.auth.kullanici_kodu') }}" autofocus>
+                                        <label for="username">{{ trans('translations.auth.kullanici_kodu') }}</label>
                                     </div>
                                 </div>
                                 <div class="col-12">

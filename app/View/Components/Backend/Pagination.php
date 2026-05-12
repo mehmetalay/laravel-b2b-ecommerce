@@ -26,6 +26,6 @@ class Pagination extends Component
      */
     public function render()
     {
-        return view('components.backend.pagination');
+        return view('backend.components.pagination');
     }
 }

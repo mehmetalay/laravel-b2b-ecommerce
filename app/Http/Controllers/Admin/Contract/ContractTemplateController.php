@@ -19,12 +19,12 @@ class ContractTemplateController extends Controller
     {
         $templates = ContractTemplate::latest()->paginate(50);
 
-        return view('admin.contract.templates.index', compact('templates'));
+        return view('backend.pages.settings.contract.templates.index', compact('templates'));
     }
 
     public function create()
     {
-        return view('admin.contract.templates.create');
+        return view('backend.pages.settings.contract.templates.create');
     }
 
     public function store(ContractTemplateRequest $request)
@@ -48,7 +48,7 @@ class ContractTemplateController extends Controller
 
     public function edit(ContractTemplate $template)
     {
-        return view('admin.contract.templates.edit', compact('template'));
+        return view('backend.pages.settings.contract.templates.edit', compact('template'));
     }
 
     public function show(ContractTemplate $template)

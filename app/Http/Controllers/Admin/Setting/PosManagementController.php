@@ -21,7 +21,7 @@ class PosManagementController extends Controller
      */
     public function index()
     {
-        return view('admin.settings.pos-managements.index');
+        return view('backend.pages.settings.pos-managements.index');
     }
 
     /**

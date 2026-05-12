@@ -1,4 +1,4 @@
-@extends('layouts.checkout')
+@extends('frontend.layouts.checkout')
 
 @section('content')
     <section class="section-b-space">

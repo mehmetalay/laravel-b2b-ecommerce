@@ -31,6 +31,6 @@ class StatusBadge extends Component
      */
     public function render()
     {
-        return view('components.backend.status-badge');
+        return view('backend.components.status-badge');
     }
 }

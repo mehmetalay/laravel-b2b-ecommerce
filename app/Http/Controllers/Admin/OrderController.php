@@ -21,7 +21,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return view('admin.orders.index');
+        return view('backend.pages.orders.index');
     }
 
     /**
@@ -45,7 +45,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        return view('admin.orders.edit', compact('order'));
+        return view('backend.pages.orders.edit', compact('order'));
     }
 
     /**

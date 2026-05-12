@@ -32,7 +32,7 @@ class SliderController extends Controller
 
         $items = Slider::where('type', $type)->orderBy('sort_order')->get();
 
-        return view('admin.settings.design-settings.sliders.index', compact('items', 'type'));
+        return view('backend.pages.settings.design-settings.sliders.index', compact('items', 'type'));
     }
 
     /**
@@ -50,7 +50,7 @@ class SliderController extends Controller
                 'mobile' => $type['mobile']['recommended_resolution'],
             ]);
 
-        return view('admin.settings.design-settings.sliders.create', compact('sliderSizes'));
+        return view('backend.pages.settings.design-settings.sliders.create', compact('sliderSizes'));
     }
 
     /**
@@ -99,7 +99,7 @@ class SliderController extends Controller
                 'mobile' => $type['mobile']['recommended_resolution'],
             ]);
 
-        return view('admin.settings.design-settings.sliders.edit', compact('slider', 'type', 'sliderSizes'));
+        return view('backend.pages.settings.design-settings.sliders.edit', compact('slider', 'type', 'sliderSizes'));
     }
 
     /**

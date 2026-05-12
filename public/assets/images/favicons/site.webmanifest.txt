@@ -1,7 +1,7 @@
 {
-    "name": "ÖZDOĞAN HIRDAVAT | B2B",
-    "short_name": "ÖZDOĞAN B2B",
-    "description": "Özdoğan Hırdavat bayi portalı – B2B satış ve sipariş yönetimi.",
+    "name": "B2B",
+    "short_name": "B2B",
+    "description": "Bayi portalı – B2B satış ve sipariş yönetimi.",
     "icons": [
         {
             "src": "android-chrome-192x192.png",

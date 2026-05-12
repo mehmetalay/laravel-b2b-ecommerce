@@ -56,7 +56,7 @@ class PaymentController extends Controller
             ->paginate(50)
             ->appends($request->query());
 
-        return view('payments.index', compact('payments', 'startDate', 'endDate'));
+        return view('frontend.pages.checkout.index', compact('payments', 'startDate', 'endDate'));
     }
 
     /**
@@ -148,7 +148,7 @@ class PaymentController extends Controller
 
         logSession('Ödeme sayfasına erişildi.', null, 'info', 'payment_logs');
 
-        return view('payments.page');
+        return view('frontend.pages.checkout.page');
     }
 
     public function listInstallment(ListInstallmentRequest $request)
@@ -180,7 +180,7 @@ class PaymentController extends Controller
 
         return response()->json([
             'result' => 'success',
-            'view' => view('payments.installment-list', compact('amount', 'bankIntegration'))->render()
+            'view' => view('frontend.pages.checkout.installment-list', compact('amount', 'bankIntegration'))->render()
         ]);
     }
 
@@ -197,7 +197,7 @@ class PaymentController extends Controller
 
         $automaticSinglePaymentId = BankIntegration::where('automatic_single_payment', 1)->value('id');
 
-        return view('payments.payment-link.page', compact('paymentLink', 'automaticSinglePaymentId'));
+        return view('frontend.pages.checkout.payment-link.page', compact('paymentLink', 'automaticSinglePaymentId'));
     }
 
     public function paymentLinklistInstallment(PaymentLinkListInstallmentRequest $request)
@@ -251,7 +251,7 @@ class PaymentController extends Controller
 
         return response()->json([
             'result' => 'success',
-            'view' => view('payments.payment-link.installment-list', compact('amount', 'bankIntegration', 'paymentLink'))->render()
+            'view' => view('frontend.pages.checkout.payment-link.installment-list', compact('amount', 'bankIntegration', 'paymentLink'))->render()
         ]);
     }
 

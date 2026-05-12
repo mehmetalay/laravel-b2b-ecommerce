@@ -21,12 +21,12 @@ class AttributeValueController extends Controller
 
     public function index(Attribute $attribute)
     {
-        return view('admin.catalog.product-attribute.attribute-value.index', compact('attribute'));
+        return view('backend.pages.catalog.product-attribute.attribute-value.index', compact('attribute'));
     }
 
     public function create(Attribute $attribute)
     {
-        return view('admin.catalog.product-attribute.attribute-value.create', compact('attribute'));
+        return view('backend.pages.catalog.product-attribute.attribute-value.create', compact('attribute'));
     }
 
     public function store(Request $request, Attribute $attribute)
@@ -107,7 +107,7 @@ class AttributeValueController extends Controller
 
     public function edit(Attribute $attribute, AttributeValue $attributeValue)
     {
-        return view('admin.catalog.product-attribute.attribute-value.edit', ['attribute' => $attribute, 'model' => $attributeValue]);
+        return view('backend.pages.catalog.product-attribute.attribute-value.edit', ['attribute' => $attribute, 'model' => $attributeValue]);
     }
 
     public function update(Request $request, Attribute $attribute, AttributeValue $attributeValue)

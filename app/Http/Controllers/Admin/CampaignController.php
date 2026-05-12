@@ -25,7 +25,7 @@ class CampaignController extends Controller
     {
         $items = Campaign::paginate(50);
 
-        return view('admin.campaigns.index', compact('items'));
+        return view('backend.pages.campaigns.index', compact('items'));
     }
 
     /**
@@ -33,7 +33,7 @@ class CampaignController extends Controller
      */
     public function create()
     {
-        return view('admin.campaigns.create');
+        return view('backend.pages.campaigns.create');
     }
 
     /**
@@ -91,7 +91,7 @@ class CampaignController extends Controller
      */
     public function edit(Campaign $campaign)
     {
-        return view('admin.campaigns.edit', compact('campaign'));
+        return view('backend.pages.campaigns.edit', compact('campaign'));
     }
 
     /**
@@ -159,7 +159,7 @@ class CampaignController extends Controller
             $ruleData = $campaign->rules->first();
         }
 
-        $html = view("admin.campaigns.partials.{$partial}", compact('ruleData'))->render();
+        $html = view("backend.pages.campaigns.partials._{$partial}", compact('ruleData'))->render();
 
         return response()->json([
             'status' => 'success',

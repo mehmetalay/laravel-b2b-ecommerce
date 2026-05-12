@@ -24,7 +24,7 @@ class ReportController extends Controller
             })
             ->paginate(50);
 
-        return view('admin.reports.no-image-products', compact('items'));
+        return view('backend.pages.dashboard.reports.no-image-products', compact('items'));
     }
 
     public function productsWithoutQuantity()
@@ -37,7 +37,7 @@ class ReportController extends Controller
             ->whereNotNull('category_id')
             ->paginate(50);
 
-        return view('admin.reports.products-without-quantity', compact('items'));
+        return view('backend.pages.dashboard.reports.products-without-quantity', compact('items'));
     }
 
     public function inactiveProducts()
@@ -50,7 +50,7 @@ class ReportController extends Controller
             ->whereNotNull('category_id')
             ->paginate(50);
 
-        return view('admin.reports.inactive-products', compact('items'));
+        return view('backend.pages.dashboard.reports.inactive-products', compact('items'));
     }
 
     public function nonSplittablePackages()
@@ -79,6 +79,6 @@ class ReportController extends Controller
             })
             ->paginate(50);
 
-        return view('admin.reports.non-splittable-packages', compact('items'));
+        return view('backend.pages.dashboard.reports.non-splittable-packages', compact('items'));
     }
 }

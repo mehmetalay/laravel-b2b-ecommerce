@@ -28,7 +28,7 @@ class BrandController extends Controller
      */
     public function index(Request $request, BrandFilters $filters)
     {
-        return view('admin.catalog.brands.index');
+        return view('backend.pages.catalog.brands.index');
     }
 
     /**
@@ -38,7 +38,7 @@ class BrandController extends Controller
      */
     public function create()
     {
-        return view('admin.catalog.brands.create');
+        return view('backend.pages.catalog.brands.create');
     }
 
     /**
@@ -80,7 +80,7 @@ class BrandController extends Controller
      */
     public function edit(Brand $brand)
     {
-        return view('admin.catalog.brands.edit', compact('brand'));
+        return view('backend.pages.catalog.brands.edit', compact('brand'));
     }
 
     /**

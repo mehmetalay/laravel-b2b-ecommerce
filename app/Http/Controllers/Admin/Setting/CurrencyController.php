@@ -25,7 +25,7 @@ class CurrencyController extends Controller
     {
         $items = $this->service->getAllCurrencies();
 
-        return view('admin.settings.currencies.index', compact('items'));
+        return view('backend.pages.settings.currencies.index', compact('items'));
     }
 
     /**
@@ -57,7 +57,7 @@ class CurrencyController extends Controller
      */
     public function edit(Currency $currency)
     {
-        return view('admin.settings.currencies.edit', compact('currency'));
+        return view('backend.pages.settings.currencies.edit', compact('currency'));
     }
 
     /**

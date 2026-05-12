@@ -34,7 +34,7 @@ class SalesmanController extends Controller
             ->orderBy('code', 'ASC')
             ->paginate(100);
 
-        return view('admin.salesmans.index', compact('items'));
+        return view('backend.pages.dealers.salesmans.index', compact('items'));
     }
 
     /**
@@ -42,7 +42,7 @@ class SalesmanController extends Controller
      */
     public function create()
     {
-        return view('admin.salesmans.create');
+        return view('backend.pages.dealers.salesmans.create');
     }
 
     /**
@@ -99,7 +99,7 @@ class SalesmanController extends Controller
             $categories = app(CategoryService::class)->getAllActiveCategories()->whereIn('id', $categoryIds)->keyBy('id');
         }
 
-        return view('admin.salesmans.edit', compact('salesman', 'categoryIds', 'categories'));
+        return view('backend.pages.dealers.salesmans.edit', compact('salesman', 'categoryIds', 'categories'));
     }
 
     /**

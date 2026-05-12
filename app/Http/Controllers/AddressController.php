@@ -16,7 +16,7 @@ class AddressController extends Controller
     public function index()
     {
         $addresses = $this->service->listForUser();
-        return view('account.addresses.index', compact('addresses'));
+        return view('frontend.pages.account.addresses.index', compact('addresses'));
     }
 
     public function list()

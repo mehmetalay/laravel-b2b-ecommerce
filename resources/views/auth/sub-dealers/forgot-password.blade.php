@@ -1,4 +1,4 @@
-@extends('layouts.login')
+@extends('frontend.layouts.login')
 
 @section('content')
     <section class="log-in-section background-image-2 section-b-space">
