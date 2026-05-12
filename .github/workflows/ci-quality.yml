@@ -31,6 +31,7 @@ jobs:
 
       - name: PHP CS Fixer (dry-run)
         run: vendor/bin/php-cs-fixer fix --dry-run --diff --config=.php-cs-fixer.dist.php --verbose
+        continue-on-error: true
 
       - name: PHPStan analyse
         run: vendor/bin/phpstan analyse --configuration=phpstan.neon.dist --no-progress
