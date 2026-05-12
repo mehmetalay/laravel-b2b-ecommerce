@@ -16,7 +16,6 @@
 <link rel="icon" type="image/png" sizes="32x32" href="{{ image_url('favicon-32x32.png', 'favicon') }}">
 <link rel="icon" type="image/png" sizes="16x16" href="{{ image_url('favicon-16x16.png', 'favicon') }}">
 <link rel="manifest" href="{{ image_url('site.webmanifest.txt', 'favicon') }}">
-<link rel="mask-icon" href="{{ image_url('safari-pinned-tab.svg', 'favicon') }}" color="#e50000">
 <meta name="apple-mobile-web-app-title" content="{{ general_info('seo_meta_title') }}">
 <meta name="application-name" content="{{ general_info('seo_meta_title') }}">
 <meta name="msapplication-TileColor" content="#ffffff">
