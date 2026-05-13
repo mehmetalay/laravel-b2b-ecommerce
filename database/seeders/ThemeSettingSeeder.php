@@ -26,7 +26,7 @@ class ThemeSettingSeeder extends Seeder
                 'pinterest' => 'https://tr.pinterest.com/',
                 'youtube' => 'https://www.youtube.com/?app=desktop&hl=tr',
                 'linkedin' => 'linkedin.com/home?originalSubdomain=tr',
-                'whatsapp' => 5000000000,
+                'whatsapp' => '+90 500 000 00 00',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

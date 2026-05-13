@@ -3,7 +3,9 @@
 
 ## Overview
 
-This project is a Laravel 8 based B2B e-commerce platform with ERP-connected business workflows.
+A modular Laravel-based B2B and e-commerce platform focused on ERP-integrated operational workflows, payment systems, and scalable backend architecture.
+
+The system includes dealer management, order/payment lifecycle orchestration, ERP synchronization, queue-backed operations, and progressive frontend modernization.
 
 It includes:
 - Dealer / subdealer account structure
@@ -108,7 +110,7 @@ Queue-backed and retry-safe workflows are used for operational tasks such as:
 ### Backend
 
 - PHP
-- Laravel 8
+- Laravel Framework
 - MySQL
 - SQL Server
 - Redis
@@ -124,11 +126,12 @@ Queue-backed and retry-safe workflows are used for operational tasks such as:
 
 ## Integrations
 
-- ERP Systems
+- ERP integrations (SQL Server / ETA-style workflows)
 - Virtual POS / Bank APIs
-- FTP Services
-- Mail Services
-- SMS Services
+- ERP integrations (SQL Server / ETA-style workflows)
+- Virtual POS / Bank APIs
+- FTP-based invoice workflows
+- SMS & mail service integrations
 
 ## Security Notes
 
@@ -163,10 +166,6 @@ ERP_USERNAME=
 ERP_PASSWORD=
 ERP_BASE_URL=
 ```
-
-## Screenshots
-
-Screenshots can be added under `docs/screenshots/`.
 
 ## Testing
 
